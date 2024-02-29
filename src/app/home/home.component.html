@@ -1,0 +1,39 @@
+<div class="container-fluid ">
+<div class="row">
+    <div *ngIf="sideBarStatus" style="height: 91vh;width: fit-content;" class="col-lg-2 bg-dark d-flex flex-column p-3">
+        <a style="text-decoration: none;color: white;" class="fw-bolder mb-3" routerLink="/dashboard">Home</a>
+        <a style="text-decoration: none;color: white;" class="fw-bolder  mb-3" routerLink="/users">Users</a>
+        <button (click)="LogOut()" class="btn text-light fw-bolder   mt-auto ">LogOut
+            <i class="ms-1 fa-solid fa-right-from-bracket"></i>
+        </button>
+    </div>
+    <div  class="col">
+       <div class="row p-3 w-100">
+        <div class="col-lg-8">
+            <div style="height: 180px;background-image:url('https://static.vecteezy.com/system/resources/previews/036/002/356/non_2x/banner-background-pastel-color-abstract-green-and-orange-gold-line-pattern-memphis-eps-10-vector.jpg');" class="banner rounded p-3 d-flex align-items-center shadow ">
+                <h1 class="fw-bolder fs-1 "><i style="cursor: pointer;" (click)="menuBtnClicked()" class="fa-solid fa-bars me-3"></i>Welcome {{adminName}}</h1>
+            </div>
+            <div class="row mt-3 ">
+                <div class="col-lg-5 ">
+                    <!-- calender -->
+                    <app-calender></app-calender>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 border rounded shadow">
+                    <!-- Chart -->
+                    <app-chart></app-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div style="height: 400px;" class="border rounded p-2 shadow edit-admin">
+                <app-update-admin (onAdminChange)="onAdminChange($event)"></app-update-admin>
+            </div>
+            <div style="height: 150px;background-image: url('https://static.vecteezy.com/system/resources/previews/036/002/356/non_2x/banner-background-pastel-color-abstract-green-and-orange-gold-line-pattern-memphis-eps-10-vector.jpg');" class="d-flex  justify-content-center align-items-center border rounded shadow mt-3 ">
+                <h2 class="fs-2"><i class="fa-solid fa-users"></i> Employees:{{userCount}}</h2>
+            </div>
+        </div>
+       </div>
+    </div>
+</div>
+</div>
